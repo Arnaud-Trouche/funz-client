@@ -18,13 +18,14 @@ import java.util.Map;
 import java.util.Properties;
 import org.apache.commons.exec.OS;
 import org.funz.Project;
-import static org.funz.XMLConstants.*;
 import org.funz.conf.Configuration;
+import org.funz.core.LogCollector.SeverityLevel;
 import org.funz.doeplugin.DesignSession;
 import org.funz.doeplugin.Experiment;
 import org.funz.log.Log;
-import org.funz.log.LogCollector.SeverityLevel;
 import org.funz.util.ASCII;
+
+import static org.funz.core.XMLConstants.*;
 import static org.funz.util.Data.*;
 import org.funz.util.Disk;
 import org.funz.util.Format;

@@ -2,7 +2,8 @@ package org.funz.run;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.funz.Protocol;
+
+import org.funz.core.Protocol;
 import org.funz.parameter.Case;
 import org.funz.util.Parser;
 

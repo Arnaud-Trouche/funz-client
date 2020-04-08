@@ -22,3 +22,8 @@
 
 /.f/
 /src/.Rproj.user/
+/bin/
+/target/
+.settings/*
+.classpath
+.project

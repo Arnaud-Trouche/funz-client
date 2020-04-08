@@ -1,7 +1,8 @@
 package org.funz.parameter;
 
 import java.io.PrintStream;
-import org.funz.XMLConstants;
+
+import org.funz.core.XMLConstants;
 import org.w3c.dom.Element;
 
 public class SplineNode implements XMLConstants

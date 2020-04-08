@@ -9,6 +9,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import org.funz.core.Constants;
 import org.funz.doeplugin.DesignConstants;
 import org.funz.doeplugin.DesignHelper;
 import org.funz.log.Log;

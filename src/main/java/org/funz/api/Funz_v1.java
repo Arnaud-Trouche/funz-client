@@ -5,8 +5,9 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import org.funz.Constants;
+
 import org.funz.conf.Configuration;
+import org.funz.core.Constants;
 import org.funz.log.Log;
 import org.funz.run.CalculatorsPool;
 import org.funz.run.Computer;
@@ -83,6 +84,7 @@ public class Funz_v1 extends Funz {
             //toc("USER_TMP_DIR");
 
             //tic("installation");
+            System.out.println("Funz installation directory: " + Constants.APP_INSTALL_DIR);
             Log.out("Funz installation directory: " + Constants.APP_INSTALL_DIR, 1);
             //toc("installation");
 

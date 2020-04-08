@@ -1,7 +1,7 @@
 package org.funz.parameter;
 
+import org.funz.core.LogCollector.SeverityLevel;
 import org.funz.log.Log;
-import org.funz.log.LogCollector.SeverityLevel;
 
 /** Used to describe the parsing syntax rules for variables and formulas.
  * Every Variable or formula type must have a starting symbol and delimiters

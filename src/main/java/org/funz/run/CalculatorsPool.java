@@ -1,5 +1,7 @@
 package org.funz.run;
 
+import static org.funz.core.Protocol.PING_PERIOD;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
@@ -15,11 +17,10 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import org.funz.api.Funz_v1;
-import static org.funz.Protocol.PING_PERIOD;
 import org.funz.conf.Configuration;
+import org.funz.core.LogCollector.SeverityLevel;
 import org.funz.log.Alert;
 import org.funz.log.Log;
-import org.funz.log.LogCollector.SeverityLevel;
 import org.funz.run.Computer.ComputerGuard;
 import org.funz.run.Computer.ComputerStatusListener;
 

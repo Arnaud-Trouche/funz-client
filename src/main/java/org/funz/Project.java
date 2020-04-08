@@ -18,10 +18,9 @@ import java.util.List;
 import java.util.Map;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.apache.commons.io.FileUtils;
-import static org.funz.Constants.*;
-import static org.funz.XMLConstants.*;
 import org.funz.api.AbstractShell;
 import org.funz.conf.Configuration;
+import org.funz.core.LogCollector.SeverityLevel;
 import org.funz.doeplugin.Design;
 import org.funz.doeplugin.DesignConstants;
 import org.funz.doeplugin.DesignPluginsLoader;
@@ -32,13 +31,15 @@ import org.funz.ioplugin.IOPluginInterface;
 import org.funz.ioplugin.IOPluginsLoader;
 import org.funz.log.Alert;
 import org.funz.log.Log;
-import org.funz.log.LogCollector.SeverityLevel;
 import org.funz.parameter.*;
 import org.funz.parameter.VariableMethods.BadSyntaxException;
 import org.funz.parameter.VariableMethods.ParseEvalException;
 import org.funz.script.MathExpression;
 import org.funz.util.ASCII;
 import org.funz.util.Disk;
+
+import static org.funz.core.Constants.*;
+import static org.funz.core.XMLConstants.*;
 import static org.funz.util.Format.fromHTML;
 import static org.funz.util.Format.toHTML;
 import static org.funz.util.ParserUtils.ASCIIFilesAreIdentical;
@@ -260,7 +261,7 @@ public class Project {
      * returns the default project repository directory.
      */
     public static String getDefaultRepository() {
-        return org.funz.Constants.APP_USER_DIR + File.separator + PROJECT_SPACE;
+        return org.funz.core.Constants.APP_USER_DIR + File.separator + PROJECT_SPACE;
     }
 
     /**

@@ -1,5 +1,10 @@
 package org.funz.run;
 
+import static org.funz.core.Protocol.END_OF_REQ;
+import static org.funz.core.Protocol.RET_HEARTBEAT;
+import static org.funz.core.Protocol.RET_INFO;
+import static org.funz.core.Protocol.RET_YES;
+
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -17,10 +22,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import org.funz.*;
-import static org.funz.Protocol.END_OF_REQ;
-import static org.funz.Protocol.RET_HEARTBEAT;
-import static org.funz.Protocol.RET_INFO;
-import static org.funz.Protocol.RET_YES;
+import org.funz.core.Protocol;
 import org.funz.util.ASCII;
 import org.funz.util.Disk;
 import org.funz.util.TimeOut;

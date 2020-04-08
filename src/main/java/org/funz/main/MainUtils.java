@@ -2,8 +2,8 @@ package org.funz.main;
 
 import org.apache.commons.lang.StringUtils;
 import org.funz.api.Funz_v1;
+import org.funz.core.LogFile;
 import org.funz.log.Log;
-import org.funz.log.LogFile;
 
 /**
  *

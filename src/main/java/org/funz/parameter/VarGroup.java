@@ -5,7 +5,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
-import org.funz.XMLConstants;
+
+import org.funz.core.XMLConstants;
 import org.funz.util.ASCII;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;

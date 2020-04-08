@@ -7,9 +7,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
-import org.funz.Constants;
+
+import org.funz.core.Constants;
+import org.funz.core.LogCollector.SeverityLevel;
 import org.funz.log.Log;
-import org.funz.log.LogCollector.SeverityLevel;
 import org.funz.util.Digest;
 import org.funz.util.Disk;
 

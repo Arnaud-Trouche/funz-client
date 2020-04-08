@@ -3,8 +3,9 @@ package org.funz.doeplugin;
 import java.io.*;
 import java.util.Map;
 import org.funz.Project;
-import static org.funz.XMLConstants.*;
 import org.funz.parameter.Case;
+
+import static org.funz.core.XMLConstants.*;
 import static org.funz.util.Format.XML.getText;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

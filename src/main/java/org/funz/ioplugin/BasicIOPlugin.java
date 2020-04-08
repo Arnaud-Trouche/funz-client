@@ -10,9 +10,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
-import org.funz.Constants;
+
+import org.funz.core.Constants;
+import org.funz.core.LogCollector.SeverityLevel;
 import org.funz.log.Log;
-import org.funz.log.LogCollector.SeverityLevel;
 import org.funz.parameter.OutputFunctionExpression;
 import org.funz.parameter.SyntaxRules;
 import org.funz.script.MathExpression;

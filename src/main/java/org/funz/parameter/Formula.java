@@ -6,9 +6,10 @@ import java.text.DecimalFormatSymbols;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
-import org.funz.Constants;
+
+import org.funz.core.Constants;
+import org.funz.core.LogCollector.SeverityLevel;
 import org.funz.log.Log;
-import org.funz.log.LogCollector.SeverityLevel;
 import org.funz.script.MathExpression;
 import org.funz.util.ASCII;
 import static org.funz.util.ParserUtils.getASCIIFileContent;

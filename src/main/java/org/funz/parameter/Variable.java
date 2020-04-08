@@ -8,7 +8,8 @@ import java.util.LinkedList;
 import java.util.List;
 import org.apache.commons.exec.OS;
 import org.funz.Project;
-import org.funz.XMLConstants;
+import org.funz.core.XMLConstants;
+
 import static org.funz.api.Utils.toObject;
 import org.funz.util.ASCII;
 import static org.funz.util.Format.fromHTML;

@@ -3,6 +3,8 @@ package org.funz.log;
 import java.io.File;
 import java.io.IOException;
 import org.funz.conf.Configuration;
+import org.funz.core.LogCollector;
+import org.funz.core.LogTicToc;
 import org.funz.util.Disk;
 
 /**

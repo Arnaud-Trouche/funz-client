@@ -6,8 +6,9 @@ import java.util.*;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import org.funz.Project;
-import static org.funz.XMLConstants.*;
 import org.funz.util.ASCII;
+
+import static org.funz.core.XMLConstants.*;
 import static org.funz.util.Format.repeat;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

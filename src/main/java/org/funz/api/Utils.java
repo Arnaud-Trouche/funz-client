@@ -7,10 +7,10 @@ import java.util.Map;
 import org.funz.Project;
 import org.funz.ProjectController;
 import org.funz.conf.Configuration;
+import org.funz.core.LogFile;
 import org.funz.ioplugin.IOPluginInterface;
 import org.funz.ioplugin.IOPluginsLoader;
 import org.funz.log.Log;
-import org.funz.log.LogFile;
 import org.funz.script.RMathExpression;
 import static org.funz.util.Data.*;
 

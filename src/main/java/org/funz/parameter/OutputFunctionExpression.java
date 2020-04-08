@@ -4,8 +4,9 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+
+import org.funz.core.LogCollector.SeverityLevel;
 import org.funz.log.Log;
-import org.funz.log.LogCollector.SeverityLevel;
 import org.funz.results.RendererHelper;
 import org.funz.script.MathExpression;
 import org.funz.script.MathExpression.MathException;

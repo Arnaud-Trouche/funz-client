@@ -6,9 +6,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
-import org.funz.XMLConstants;
+
+import org.funz.core.LogCollector;
+import org.funz.core.XMLConstants;
 import org.funz.log.Log;
-import org.funz.log.LogCollector;
 import org.funz.util.ASCII;
 import org.funz.util.Digest;
 import org.funz.util.Disk;

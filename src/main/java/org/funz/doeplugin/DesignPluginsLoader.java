@@ -2,8 +2,9 @@ package org.funz.doeplugin;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import org.funz.core.LogCollector.SeverityLevel;
 import org.funz.log.Log;
-import org.funz.log.LogCollector.SeverityLevel;
 import org.funz.util.URLMethods;
 
 public class DesignPluginsLoader {

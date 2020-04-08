@@ -1,5 +1,7 @@
 package org.funz.api;
 
+import static org.funz.core.LogTicToc.HMS;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.DecimalFormatSymbols;
@@ -7,10 +9,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
-import org.funz.Constants;
+
+import org.funz.core.Constants;
+import org.funz.core.LogFile;
 import org.funz.log.Log;
-import org.funz.log.LogFile;
-import static org.funz.log.LogTicToc.HMS;
 
 /**
  *

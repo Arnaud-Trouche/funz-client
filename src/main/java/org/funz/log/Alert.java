@@ -3,6 +3,8 @@ package org.funz.log;
 import java.io.File;
 import java.util.Scanner;
 
+import org.funz.core.LogCollector;
+
 /**
  *
  * @author richet

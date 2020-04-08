@@ -8,10 +8,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
-import org.funz.Constants;
+
 import org.funz.Project;
 import static org.funz.api.Utils.*;
 import org.funz.conf.Configuration;
+import org.funz.core.Constants;
 import org.funz.doeplugin.Design;
 import org.funz.doeplugin.DesignConstants;
 import org.funz.doeplugin.Experiment;
