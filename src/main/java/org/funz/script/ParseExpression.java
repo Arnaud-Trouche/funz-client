@@ -3,9 +3,9 @@ package org.funz.script;
 import java.io.File;
 import java.lang.reflect.Method;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import org.funz.core.LogCollector.SeverityLevel;
 import org.funz.log.Log;
@@ -74,7 +74,7 @@ public class ParseExpression {
             Double.parseDouble(s);
             return true;
         } catch (NumberFormatException e) {
-            return s.trim().matches("([a-zA-Z0-9\\.]*)\\((.*)\\)");// startsWith("(") && s.endsWith(")");
+            return s.trim().matches("([\\!\\-]*[a-zA-Z0-9\\.]*)\\((.*)\\)");// startsWith("(") && s.endsWith(")");
         }
     }
 
@@ -171,7 +171,7 @@ public class ParseExpression {
                         if (!doubleQuoted) {
                             simpleQuoted = !simpleQuoted;
                         }
-                    } else if (c == '\"') {
+                    } else if (c == '"') {
                         if (!simpleQuoted) {
                             doubleQuoted = !doubleQuoted;
                         }
@@ -362,7 +362,7 @@ public class ParseExpression {
         return go;//.toString();
     }
 
-    public static Object eval(Object of, HashMap<String, Object> outputNamesValues) {
+    public static Object eval(Object of, Map<String, Object> outputNamesValues) {
         assert of instanceof String : "Problem trying to eval " + of.toString() + " : not a String";
         return eval((String) of, outputNamesValues);
     }
@@ -372,7 +372,7 @@ public class ParseExpression {
      *
      * @param outputValues values of initial outputs
      */
-    public synchronized static Object eval(String f, HashMap<String, Object> params) {
+    public synchronized static Object eval(String f, Map<String, Object> params) {
         Object out = null;
         List<File> rfiles = new LinkedList<>();
         try {

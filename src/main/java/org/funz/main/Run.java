@@ -15,6 +15,7 @@ import org.funz.api.RunShell_v1;
 import org.funz.log.Log;
 import static org.funz.parameter.OutputFunctionExpression.OutputFunctions;
 import org.funz.util.ASCII;
+import org.funz.util.Data;
 import static org.funz.util.Format.ArrayMapToCSVString;
 import static org.funz.util.Format.ArrayMapToJSONString;
 import static org.funz.util.Format.ArrayMapToMDString;
@@ -305,10 +306,10 @@ public class Run extends MainUtils {
             }
 
             for (String prop : _runControl.keySet()) {
-                shell.setProjectProperty(prop, _runControl.get(prop));
+                if (!prop.equals("cache"))
+                    shell.setProjectProperty(prop, _runControl.get(prop));
             }
         } catch (Exception e) {
-            e.printStackTrace();
             System.err.println("[ERROR] failed to CREATE Funz shell: " + e.getMessage() + "\n" + (shell != null ? ArrayMapToMDString(shell.getResultsArrayMap()) : "?"));
             //e.printStackTrace();
             System.exit(CREATE_SHELL_ERROR);
@@ -397,7 +398,8 @@ public class Run extends MainUtils {
             results = shell.getResultsArrayMap();
             //toc("getResultsStringArrayMap");
         } catch (Exception e) {
-            System.err.println("[ERROR] failed to RUN Funz shell: " + e.getMessage() + "\n" + ArrayMapToMDString(shell.getResultsArrayMap()));
+            System.err.println("[ERROR] failed to RUN Funz shell: " + e.getMessage() + "\n" + 
+                    ArrayMapToMDString(Data.remove_array(shell.getResultsArrayMap(),"(.*)\\.(\\d+)")));
             //e.printStackTrace();
             System.exit(RUN_ERROR);
         } finally {

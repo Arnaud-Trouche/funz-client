@@ -250,7 +250,6 @@ public class RunShell_v1 extends AbstractShell {
         if (!super.getState().equals(SHELL_RUNNING)) {
             return super.getState();
         }
-
         return getRunState().trim();
     }
 

@@ -31,14 +31,10 @@ import org.funz.parameter.Case;
 import org.funz.parameter.Case.Observer;
 import org.funz.parameter.CaseList;
 import org.funz.parameter.OutputFunctionExpression;
-import org.funz.parameter.Variable;
-import org.funz.parameter.VariableMethods.Value;
 import org.funz.run.Client;
 import org.funz.run.Computer;
-import org.funz.script.RMathExpression;
 import static org.funz.util.Data.*;
 import org.funz.util.Disk;
-import static org.funz.util.Format.ArrayMapToMDString;
 import static org.funz.util.Format.repeat;
 import org.funz.util.ZipTool;
 import org.math.array.IntegerArray;
@@ -1009,7 +1005,11 @@ public abstract class BatchRun_v1 {
             }
 
             if (success) {
-                c.setInformation("Run succeded.");
+                if(c.isError()) {
+                    c.setInformation("Run error.");
+                } else {
+                    c.setInformation("Run succeded.");
+                }
             } else {
                 if (c.getTriesDone() > prj.getMaxRetry()) {
                     c.setInformation("Run failed: too much retry (" + c.getStatusInformation() + ")");
@@ -1235,7 +1235,7 @@ public abstract class BatchRun_v1 {
         merged_results = new HashMap<>();
 
         setState(BATCH_STARTING);
-
+        
         //LogUtils.tic("checkVariablesAreValid");
         String cv = prj.checkVariablesAreValid();
         //LogUtils.toc("checkVariablesAreValid");
@@ -1264,6 +1264,27 @@ public abstract class BatchRun_v1 {
             throw new Exception("Output expressions are not correclty set: " + cv);
         }
 
+        int waited_time = 0;
+        if (prj.waitingTimeout>0) {//otherwise ignore grid checking
+            Funz_v1.POOL.setRefreshing(true, this, "Searching for code "+prj.getCode());
+            while (waited_time< prj.waitingTimeout*1000 && !Funz_v1.POOL.getCodes().contains(prj.getCode())) {
+                setState(BATCH_WAITINGCOMPUTERS+StringUtils.repeat(".",waited_time/1000));
+                //synchronized (this) {
+                sleep(SLEEP_PERIOD);
+                //}
+                waited_time += SLEEP_PERIOD;
+            }
+            if (!Funz_v1.POOL.getCodes().contains(prj.getCode())) {
+                setState(BATCH_ERROR+": '"+ prj.getCode() + "' is missing in Funz grid.");
+                Alert.showError("Code '" + prj.getCode() + "' is missing in Funz grid (only "+Funz_v1.POOL.getCodes()+" are available).");
+                return false;
+            } else if (waited_time>0) {
+                setState(BATCH_STARTING+": '"+ prj.getCode() + "' was found in Funz grid.");
+                Alert.showInformation("Code '"+prj.getCode()+"' was found in Funz grid.");
+            }
+        } else 
+            Alert.showInformation("Bypass Funz grid checking for code '"+prj.getCode()+"'");
+        
         try {
             torun = new ArrayList<>();
             runCases.clear();
@@ -1484,6 +1505,7 @@ public abstract class BatchRun_v1 {
     public static final String BATCH_OVER = "Batch over";
     public static final String BATCH_ARCHIVING = "Archiving...";
     public static final String BATCH_RUNNING = "Running...";
+    public static final String BATCH_WAITINGCOMPUTERS = "Waiting...";
     public static final String BATCH_STARTING = "Starting...";
     public static final String BATCH_ERROR = "Batch failed";
     public static final String BATCH_EXCEPTION = "Batch exception";
