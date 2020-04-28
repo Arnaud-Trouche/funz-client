@@ -257,7 +257,7 @@
 		</fileset>
 	</path>
 
-	<target name="start-calculators" depends="compile, stop-calculators">
+	<target name="start-calculators" depends="compile, stop-calculators" unless="env.NO_CALCULATORS">
 		<java classname="org.funz.main.RunCalculators" fork="true" spawn="true">
 			<classpath refid="calculator.classpath" />
 			<classpath path="${build.dir}" />
@@ -267,9 +267,9 @@
 		</java>
 	</target>
 
-	<target name="stop-calculators">
+	<target name="stop-calculators" unless="env.NO_CALCULATORS">
 		<delete file="calculators.lock" />
-		<sleep seconds="5" />
+		<sleep seconds="10" />
 	</target>
 
 	<target name="test-cmd" depends="prepareTests, start-calculators" unless="env.NO_TEST_CMD">
@@ -292,7 +292,7 @@
                     project.setProperty('startDate', new Date());
                 </script>
 				<echo level="error">Start: ${startDate}</echo>
-				<exec executable="cmd" osfamily="unix" failonerror="false" output="${root.dir}/@{test.file}.txt" timeout="1200000" resultproperty="@{test.file}.failed">
+				<exec executable="cmd" osfamily="unix" failonerror="false" timeout="2400000" resultproperty="@{test.file}.failed">
 					<arg line="/c ${root.dir}/src/test/cmd/@{test.file}" />
 				</exec>
 				<script language="javascript">

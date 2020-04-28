@@ -13,6 +13,7 @@ matrix:
         - NO_TEST_PYTHON=1
         - NO_TEST_BASH=1
         - NO_TEST_CMD=1
+        - NO_CALCULATORS=1
         - R_SERVER=R2js
     - name: "Linux JDK8 - Renjin"
       os: linux
@@ -26,6 +27,7 @@ matrix:
         - NO_TEST_PYTHON=1
         - NO_TEST_BASH=1
         - NO_TEST_CMD=1
+        - NO_CALCULATORS=1
         - R_SERVER=Renjin
     - name: "Linux JDK8 - Rserve"
       os: linux
@@ -39,6 +41,7 @@ matrix:
         - NO_TEST_PYTHON=1
         - NO_TEST_BASH=1
         - NO_TEST_CMD=1
+        - NO_CALCULATORS=1
         - R_SERVER="R://localhost"
     - name: "Linux JDK latest - R2js"
       os: linux
@@ -52,6 +55,7 @@ matrix:
         - NO_TEST_PYTHON=1
         - NO_TEST_BASH=1
         - NO_TEST_CMD=1
+        - NO_CALCULATORS=1
         - R_SERVER=R2js
     - name: "Linux JDK latest - Renjin"
       os: linux
@@ -65,6 +69,7 @@ matrix:
         - NO_TEST_PYTHON=1
         - NO_TEST_BASH=1
         - NO_TEST_CMD=1
+        - NO_CALCULATORS=1
         - R_SERVER=Renjin
     - name: "Linux JDK latest - Rserve"
       os: linux
@@ -78,24 +83,95 @@ matrix:
         - NO_TEST_PYTHON=1
         - NO_TEST_BASH=1
         - NO_TEST_CMD=1
+        - NO_CALCULATORS=1
         - R_SERVER="R://localhost"
-    - name: "Linux JDK8 Test R,python,bash"
+    - name: "Linux JDK8 Test R"
       os: linux
       dist: trusty
       env:
         - TRAVIS_DIST_NAME="trusty"
         - NO_TEST_JAVA=1
+        #- NO_TEST_ISSUES=1
+        #- NO_TEST_R=1
+        - NO_TEST_PYTHON=1
+        - NO_TEST_BASH=1
         - NO_TEST_CMD=1
+        #- NO_CALCULATORS=1
         - R_SERVER=R2js
       jdk:
         - openjdk8
-    - name: "Linux JDK latest Test R,python,bash"
+    - name: "Linux JDK8 Test python"
       os: linux
       dist: trusty
       env:
         - TRAVIS_DIST_NAME="trusty"
         - NO_TEST_JAVA=1
+        - NO_TEST_ISSUES=1
+        - NO_TEST_R=1
+        #- NO_TEST_PYTHON=1
+        - NO_TEST_BASH=1
         - NO_TEST_CMD=1
+        #- NO_CALCULATORS=1
+        - R_SERVER=R2js
+      jdk:
+        - openjdk8
+    - name: "Linux JDK8 Test bash"
+      os: linux
+      dist: trusty
+      env:
+        - TRAVIS_DIST_NAME="trusty"
+        - NO_TEST_JAVA=1
+        - NO_TEST_ISSUES=1
+        - NO_TEST_R=1
+        - NO_TEST_PYTHON=1
+        #- NO_TEST_BASH=1
+        - NO_TEST_CMD=1
+        #- NO_CALCULATORS=1
+        - R_SERVER=R2js
+      jdk:
+        - openjdk8
+    - name: "Linux JDK latest Test R"
+      os: linux
+      dist: trusty
+      env:
+        - TRAVIS_DIST_NAME="trusty"
+        - NO_TEST_JAVA=1
+        #- NO_TEST_ISSUES=1
+        #- NO_TEST_R=1
+        - NO_TEST_PYTHON=1
+        - NO_TEST_BASH=1
+        - NO_TEST_CMD=1
+        #- NO_CALCULATORS=1
+        - R_SERVER=R2js
+      jdk:
+        - openjdk13
+    - name: "Linux JDK latest Test python"
+      os: linux
+      dist: trusty
+      env:
+        - TRAVIS_DIST_NAME="trusty"
+        - NO_TEST_JAVA=1
+        - NO_TEST_ISSUES=1
+        - NO_TEST_R=1
+        #- NO_TEST_PYTHON=1
+        - NO_TEST_BASH=1
+        - NO_TEST_CMD=1
+        #- NO_CALCULATORS=1
+        - R_SERVER=R2js
+      jdk:
+        - openjdk13
+    - name: "Linux JDK latest Test bash"
+      os: linux
+      dist: trusty
+      env:
+        - TRAVIS_DIST_NAME="trusty"
+        - NO_TEST_JAVA=1
+        - NO_TEST_ISSUES=1
+        - NO_TEST_R=1
+        - NO_TEST_PYTHON=1
+        #- NO_TEST_BASH=1
+        - NO_TEST_CMD=1
+        #- NO_CALCULATORS=1
         - R_SERVER=R2js
       jdk:
         - openjdk13
@@ -128,21 +204,87 @@ matrix:
 #        - NO_TEST_PYTHON=1
 #        - NO_TEST_BASH=1
 #        - NO_TEST_CMD=1
-    - name: "MacOS JDK8 Test R,python,bash"
+    - name: "MacOS JDK8 Test R"
       os: osx
       osx_image: xcode9.3
       env:
         - NO_TEST_JAVA=1
+        #- NO_TEST_ISSUES=1
+        #- NO_TEST_R=1
+        - NO_TEST_PYTHON=1
+        - NO_TEST_BASH=1
         - NO_TEST_CMD=1
+        #- NO_CALCULATORS=1
         - R_SERVER=R2js
       jdk:
         - oraclejdk8
-    - name: "MacOS JDK latest Test R,python,bash"
+    - name: "MacOS JDK8 Test python"
       os: osx
       osx_image: xcode9.3
       env:
         - NO_TEST_JAVA=1
+        - NO_TEST_ISSUES=1
+        - NO_TEST_R=1
+        #- NO_TEST_PYTHON=1
+        - NO_TEST_BASH=1
         - NO_TEST_CMD=1
+        #- NO_CALCULATORS=1
+        - R_SERVER=R2js
+      jdk:
+        - oraclejdk8
+    - name: "MacOS JDK8 Test bash"
+      os: osx
+      osx_image: xcode9.3
+      env:
+        - NO_TEST_JAVA=1
+        - NO_TEST_ISSUES=1
+        - NO_TEST_R=1
+        - NO_TEST_PYTHON=1
+        #- NO_TEST_BASH=1
+        - NO_TEST_CMD=1
+        #- NO_CALCULATORS=1
+        - R_SERVER=R2js
+      jdk:
+        - oraclejdk8
+    - name: "MacOS JDK latest Test R"
+      os: osx
+      osx_image: xcode9.3
+      env:
+        - NO_TEST_JAVA=1
+        #- NO_TEST_ISSUES=1
+        #- NO_TEST_R=1
+        - NO_TEST_PYTHON=1
+        - NO_TEST_BASH=1
+        - NO_TEST_CMD=1
+        #- NO_CALCULATORS=1
+        - R_SERVER=R2js
+      jdk:
+        - oraclejdk13
+    - name: "MacOS JDK latest Test python"
+      os: osx
+      osx_image: xcode9.3
+      env:
+        - NO_TEST_JAVA=1
+        - NO_TEST_ISSUES=1
+        - NO_TEST_R=1
+        #- NO_TEST_PYTHON=1
+        - NO_TEST_BASH=1
+        - NO_TEST_CMD=1
+        #- NO_CALCULATORS=1
+        - R_SERVER=R2js
+      jdk:
+        - oraclejdk13        
+    - name: "MacOS JDK latest bash"
+      os: osx
+      osx_image: xcode9.3
+      env:
+        - NO_TEST_JAVA=1
+        - NO_TEST_ISSUES=1
+        - NO_TEST_R=1
+        - NO_TEST_PYTHON=1
+        #- NO_TEST_BASH=1
+        - NO_TEST_CMD=1
+        #- NO_CALCULATORS=1
         - R_SERVER=R2js
       jdk:
         - oraclejdk13
@@ -157,7 +299,7 @@ matrix:
 #        - oraclejdk8
 #        - oraclejdk11
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then travis_wait brew update; brew install ant; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then travis_wait brew update >/dev/null; brew install ant; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install ant -y; fi
 
 install:
@@ -185,13 +327,13 @@ before_script:
   - if [[ "$TRAVIS_DIST_NAME" == "xenial" ]]; then echo "deb https://cloud.r-project.org/bin/linux/ubuntu xenial/" | sudo tee -a /etc/apt/sources.list; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update -qq; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install r-recommended --allow-unauthenticated -y; fi
-  - if [[ "$NO_TEST_PYTHON" != "1" ]]; then if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install python3; pip3 install numpy; pip3 install py4j;  fi; if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt install python3-numpy python3-pip; sudo pip3 install py4j; fi; fi
+  - if [[ "$NO_TEST_PYTHON" != "1" ]]; then if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install python3; pip3 install numpy; pip3 install py4j==0.10.8.1;  fi; if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt install python3-numpy python3-pip; sudo pip3 install py4j==0.10.8.1; fi; fi
   - if [[ "$NO_TEST_R" != "1" ]]; then if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo ln -s /usr/lib/jvm/default-java $JAVA_HOME; fi; if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home; fi; sudo R CMD javareconf JAVA_HOME=$JAVA_HOME; sudo R -e "install.packages('rJava',repos = 'https://cloud.r-project.org')"; fi
 
 script:
   - echo "R.server="$R_SERVER > Funz.conf
   - cd dist; echo "R.server="$R_SERVER > Funz.conf; cd ..
-  - if [[ "$NO_TEST_JAVA" == "1" ]]; then travis_wait 50 ant test; else ant test; fi
+  - if [[ "$NO_TEST_JAVA" == "1" ]]; then travis_wait 40 ant test; else ant test; fi
 
 after_success:
   - if [[ "$NO_TEST_JAVA" != "1" ]]; then ant coverage ; fi
