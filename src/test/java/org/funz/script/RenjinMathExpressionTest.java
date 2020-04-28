@@ -125,7 +125,7 @@ public class RenjinMathExpressionTest {
         assert s.equals("*") : "Bad print: " + s;
     }
 
-//    @Test  FIXME
+    @Test  
     public void testDecimal() throws Exception {
         assert engine.eval("paste(0.123)", null).equals("0.123") : "Bad decimal separator used:" + engine.eval("paste(0.123)", null);
     }

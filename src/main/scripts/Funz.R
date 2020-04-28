@@ -286,8 +286,8 @@ Funz.init <- function(FUNZ_HOME=.dir, java.control=ifelse(Sys.info()[['sysname']
         .jaddClassPath(path=file.path(.FUNZ_HOME,"lib",f))
     }
 
-    if (verbosity>3) cat("  Loading org/funz/Constants ...\n")
-    .jclassConstants <<- J("org/funz/Constants")
+    if (verbosity>3) cat("  Loading org/funz/core/Constants ...\n")
+    .jclassConstants <<- J("org/funz/core/Constants")
 
     if (verbosity>0) cat(paste("Funz ",.jclassConstants$APP_VERSION," <build ",.jclassConstants$APP_BUILD_DATE,">\n",sep=""))
 

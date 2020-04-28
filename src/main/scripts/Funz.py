@@ -245,9 +245,9 @@ def Funz_init(FUNZ_HOME=_dir, java_control={'Xmx':"512m",'Xss':"256k"} if sys.pl
         print("Java "+ _jclassSystem.getProperty("java.runtime.name")+"\n version "+_jclassSystem.getProperty("java.version")+"\n from path "+_jclassSystem.getProperty("java.home"))
 
     if verbosity>3:
-        print("  Loading org/funz/Constants ...")
+        print("  Loading org/funz/core/Constants ...")
     global _jclassConstants 
-    _jclassConstants = J.org.funz.Constants
+    _jclassConstants = J.org.funz.core.Constants
 
     if verbosity>0:
         print("Funz "+_jclassConstants.APP_VERSION+" <build "+_jclassConstants.APP_BUILD_DATE+">")

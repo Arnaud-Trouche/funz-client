@@ -111,7 +111,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
-<!-- 					<skipTests>true</skipTests> -->
+					<!-- <skipTests>true</skipTests> -->
 				</configuration>
 			</plugin>
 			<plugin>
@@ -137,6 +137,11 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/scripts</directory>
+			</resource>
+		</resources>
 	</build>
 
 	<!-- =========================================================== -->
