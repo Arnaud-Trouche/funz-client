@@ -116,22 +116,6 @@
 		</exec>
 	</target>
 
-	<!--    <manifestclasspath property="manifest.classpath" jarfile="${dist.lib.dir}/${client.jar}">
-            <classpath refid="dist.classpath" />
-        </manifestclasspath>
-
-        <jar destfile="${dist.lib.dir}/${client.jar}">
-            <fileset dir="${build.dir}">
-                <include name="**"/>
-                <exclude name="**/TEST*"/>
-                <exclude name="**/Test*"/>
-            </fileset>
-            <manifest>
-                <attribute name="Main-Class" value="${main.class}" />
-                <attribute name="Class-Path" value="${manifest.classpath}"/>
-            </manifest>
-        </jar>-->
-
 	<target name="makeJar">
 		<copy toFile="${dist.lib.dir}/${client.jar}">
 			<fileset dir="${build.dir}">

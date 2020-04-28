@@ -84,7 +84,6 @@ public class Funz_v1 extends Funz {
             //toc("USER_TMP_DIR");
 
             //tic("installation");
-            System.out.println("Funz installation directory: " + Constants.APP_INSTALL_DIR);
             Log.out("Funz installation directory: " + Constants.APP_INSTALL_DIR, 1);
             //toc("installation");
 
