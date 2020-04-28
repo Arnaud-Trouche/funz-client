@@ -5,8 +5,8 @@
 /build/
 /tmp/
 /nbproject/
-/dist/
 /test/
+/coverage/
 
 /*.png
 /*.html
